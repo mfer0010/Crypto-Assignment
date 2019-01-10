@@ -1,0 +1,251 @@
+\chapter{Block Cipher Modes and Message Authenticity}
+
+\section{Introduction}
+\paragraph{ }In this task, a secure communication system will be modelled that makes use of an AES library for an e-Banking application for money transfers. The text-based protocol that's used by this e-Banking company has the following message format:
+
+\par\centerline{\texttt{Accnt:}\textit{[10 bytes]}\texttt{Accnt:}\textit{[10 bytes]}\texttt{Descr:}\textit{[58 bytes]}\texttt{Amount:}\textit{[9 bytes]}}
+
+\paragraph{ }The following libraries and functions were imported in order to run all the code presented in this chapter:
+
+\begin{lstlisting}
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+from Crypto.Util.Padding import unpad
+from Crypto.Random import get_random_bytes
+from base64 import b16encode
+from base64 import b16decode
+import os
+import json
+import hmac
+import hashlib
+\end{lstlisting}
+
+\paragraph{ }The required data was then initialized as follows:
+
+\begin{lstlisting}
+#Initialize Data
+data = b"Accnt:0003336669Accnt:0123456789Descr:00000000000000
+		00000000000000000000000000000000000000000000A
+		mount:023456789"
+key = get_random_bytes(16)
+print(b16encode(key).decode('utf-8'))
+\end{lstlisting}
+
+
+\section{ECB Mode Implementation}
+\paragraph{ }The first task was to implement the e-Banking system using AES in ECB mode and demonstrate the weakness of using this approach through an attack which swaps the accounts thus reversing the direction of the transfer.
+
+\paragraph{ }The data was encrypted in ECB mode using the following code:
+
+\begin{lstlisting}
+ECB_cipher = AES.new(key, AES.MODE_ECB) #Create a new AES Cypher
+ #encrypt the padded data
+ciphertext_bytes = ECB_cipher.encrypt(pad(data, AES.block_size))
+#Encode the cyphertext to 16 bit encoding to have a more clear output
+#use the decode function to remove the b'...' in the output
+ciphertext = b16encode(ciphertext_bytes).decode('utf-8')
+print(ciphertext)
+\end{lstlisting}
+\textit{Output:} \texttt{4CDEB5515885FEC7390A48D4F9747BD53A309C3CA17838A5A1FD18A9A433737E9}\\
+\texttt{D35FE123067946375B9B59FAD318E1CE9C1DC732606DAA7644898E4D577B90DE9C1DC732606}
+\texttt{DAA7644898E4D577B90DE9C1DC732606DAA7644898E4D577B90DBD18D9394E2B939E4EA7D9E}
+\texttt{8C14C0B04FAF69C2C9877EE7A8805287F5B34C232}
+
+\paragraph{ }The ciphertext was then immediately decrypted to ensure it was encrypted successfully:
+\begin{lstlisting}
+decoded_ciphertext = b16decode(ciphertext) 
+decrypted_text = unpad(ECB_cipher.decrypt(decoded_ciphertext),
+				 AES.block_size)
+print(decrypted_text)
+\end{lstlisting}
+\textit{Output:} b'Accnt:0003336669Accnt:0123456789Descr:00000000000000000000000000000000\\
+00000000000000000000000000Amount:023456789'
+
+\paragraph{ }The attack was then demonstrated by Oscar by simply swapping the desired bits of the ciphertext, and once Bob decodes the message he gets a valid transaction and is thus none the wiser that the accounts have been swapped.
+\begin{lstlisting}
+#Swap the account numbers to reverse the direction of the transfer
+modified_ciphertext = ''.join([ciphertext[32:64],
+	ciphertext[0:32], ciphertext[64:]])
+#decrypt message:
+modified_result = unpad(ECB_cipher.decrypt(b16decode
+	(modified_ciphertext)), AES.block_size)
+print(modified_result.decode('utf-8'))
+\end{lstlisting}  
+\textit{Output:} Accnt:0123456789Accnt:0003336669Descr:00000000000000000000000000000000000\\
+00000000000000000000000Amount:023456789
+
+\section{CBC Mode Implementation}
+\paragraph{ }The encryption was then implemented using CBC mode and another attack was demonstrated by modifying the amount since the implementation does not verify for valid format field labels.
+
+\paragraph{ }The data was encrypted in CBC mode using the following code:
+
+\begin{lstlisting}
+iv = os.urandom(16) #initializing vector
+#Create new AEC Cipher in CBC mode
+CBC_cipher = AES.new(key, AES.MODE_CBC,iv) 
+#Encrypt padded data
+ciphertext_bytes = CBC_cipher.encrypt(pad(data, AES.block_size)) 
+#Encode the cyphertext to 16 bit encoding to have a more clear output
+#use the decode function to remove the b'...' in the output
+CBC_ciphertext = b16encode(ciphertext_bytes).decode('utf-8')
+#Save as Json in order to simulate passing the whole thing over the network
+json_data = json.dumps({'iv':b16encode(iv).decode('utf-8'),
+	 'ciphertext':CBC_ciphertext})
+\end{lstlisting}
+
+\paragraph{ }The ciphertext was again immediately decrypted to ensure it was encrypted successfully:
+
+\begin{lstlisting}
+#Read the data from the json file
+b16 = json.loads(json_data)
+iv = b16decode(b16['iv'])
+#Create a new Cipher for decryption using the same key and iv
+CBC_cipher2 = AES.new(key, AES.MODE_CBC, iv)
+#Decode, unpad and display the results
+CBC_dec_ciphertext = b16decode(b16['ciphertext'])
+CBC_decoded_plaintext = unpad(CBC_cipher2.decrypt(
+	CBC_dec_ciphertext),AES.block_size)
+print(CBC_decoded_plaintext)
+\end{lstlisting}
+\textit{Output:} b'Accnt:0003336669Accnt:0123456789Descr:00000000000000000000000000000000\\
+00000000000000000000000000Amount:023456789'
+
+\paragraph{ }An XOR function was then defined to be used in the attack:
+\begin{lstlisting}
+def xor(A, B):
+	return hex(int(A, 16) ^ int(B, 16))[2:].upper() 
+\end{lstlisting}
+
+\paragraph{ }The attack as explained previously was then demonstrated as follows:
+\begin{lstlisting}
+#Attacker can also reda the data from the json file
+Oscar_b16 = json.loads(json_data)
+Oscar_ciphertext = Oscar_b16['ciphertext']
+Oscar_iv = Oscar_b16['iv']
+block_to_alter = Oscar_ciphertext[160:192] #block containing amount
+byte_to_change = block_to_alter[14:16] #amount
+
+#xor 1st bit of plaintext with the hex value you want in new plaintext
+m = xor('0x30', '0x39') #0x30 is decimal 0, 0x39 is decimal 9
+
+#perform bit flipping
+new_byte = xor(hex(int(m, 16)), hex(int(byte_to_change, 16)))
+while len(new_byte) < 2:
+	new_byte = "".join(['0', new_byte])
+attacked_ciphertext = ''.join([Oscar_ciphertext[0:174],
+		 new_byte, Oscar_ciphertext[176:]]) 
+
+result = json.dumps({'iv':Oscar_iv, 'ciphertext':attacked_ciphertext})
+\end{lstlisting}
+
+\paragraph{ }Finally, the attack was decoded by Bob and as can be seen in the output, the amount was successfully altered.
+\begin{lstlisting}
+#Create a new Cipher for decryption using the same key and iv
+CBC_cipher_Oscar = AES.new(key, AES.MODE_CBC,b16decode(Oscar_iv))
+#Decode, unpad and display the results
+CBC_dec_ciphertext = b16decode(attacked_ciphertext)
+CBC_decoded_plaintext = unpad(CBC_cipher_Oscar.decrypt(
+		CBC_dec_ciphertext),AES.block_size)
+print(CBC_decoded_plaintext)
+\end{lstlisting} 
+\textit{Output:}b'Accnt:0003336669Accnt:0123456789Descr:000000000000000000000000000000\\
+000000000000\textbackslash xbbs\textbackslash x14\textbackslash x81\textbackslash x92xC\textbackslash x975\textbackslash xbfb\textbackslash xdf\textbackslash xaa\textbackslash \textbackslash \textbackslash xc8DAmount:923456789'
+
+\section{Hardened Implementation}
+\paragraph{ }The system was then hardened in order to provide transaction integrity. Message authentication codes were used to protect from content tampering and a challenge-response was st up to protect from replay attacks.
+
+\paragraph{ }Initially, a function was set up to compare the MACs:
+\begin{lstlisting}
+def compare_mac(a, b):
+	a = a[1:] 
+	b = b[1:]
+	different = 0
+
+	for x, y in zip(a, b):
+		different |= x ^ y
+	return different == 0
+\end{lstlisting}
+
+\paragraph{ }The data was then encrypted in CBC mode but with added MAC using HMAC-SHA256 standard.
+\begin{lstlisting}
+hmac_key = get_random_bytes(16)
+plaintext = pad(data, AES.block_size)
+iv_bytes = get_random_bytes(AES.block_size)
+HMAC_cipher = AES.new(key, AES.MODE_CBC, iv_bytes)
+encrypted_data = HMAC_cipher.encrypt(plaintext)
+iv = iv_bytes + encrypted_data #secret prefix mac
+signature = hmac.new(hmac_key, iv, hashlib.sha256).digest()
+\end{lstlisting}
+
+\paragraph{ }Finally, the signature was verified and the data decrypted if it wasn't tampered with.
+\begin{lstlisting}
+new_hmac = hmac.new(hmac_key, iv, hashlib.sha256).digest()
+if not compare_mac(new_hmac, signature):
+print("Incorrect decryption")
+cipher = AES.new(key, AES.MODE_CBC, iv_bytes)
+dec_plaintext = cipher.decrypt(encrypted_data)
+print(unpad(dec_plaintext, AES.block_size).decode('utf-8'))
+\end{lstlisting}
+\textit{Output}: Accnt:0003336669Accnt:0123456789Descr:00000000000000000000000000000000000\\00000000000000000000000Amount:023456789
+
+\section{Demonstrating Failed Attacks}
+\paragraph{ }Two failed attacks were then demonstrated to show the new system's security. The first attack attempts to tamper the data, while the second failed attack attempts to perform a replay attack.
+
+\paragraph{ }The attack function attempts the data tampering similar to the first attack shown when the data was encrypted in CBC mode.
+\begin{lstlisting}
+#Like Task B's attack
+def attack(data):
+	b16 = json.loads(data)
+	ciphertext = b16['ct']
+	iv = b16['iv']
+	block_to_alter = ciphertext[160:192] 
+	byte_to_change = block_to_alter[14:16]
+
+	m = xor('0x30', '0x39')
+
+	#perform bit flipping
+	new_byte = xor(hex(int(m, 16)), hex(int(byte_to_change, 16)))
+	while len(new_byte) < 2:
+		new_byte = "".join(['0', new_byte])
+	new_ciphertext = ''.join([ciphertext[0:174],
+			 new_byte, ciphertext[176:]]) 
+
+	result = json.dumps({'iv':iv, 
+			'ct':new_ciphertext})
+	return result
+\end{lstlisting}
+
+\paragraph{ }The \textit{decrypt\_message} function performs the required checks before decrypting the data in order to ensure the data hasn't been tampered with, similar to the decryption step shown in the previous section.
+
+\begin{lstlisting}
+#Like Task C's Decryption
+def decrypt_message(encrypted_data, iv_bytes, signature, shared_key,
+			 hmac_key):
+	iv = iv_bytes + encrypted_data
+	new_hmac = hmac.new(hmac_key, iv, hashlib.sha256).digest()
+	if not compare_mac(new_hmac, signature):
+		print("Attack!")
+	cypher = AES.new(shared_key, AES.MODE_CBC, iv_bytes)
+	plaintext = cypher.decrypt(encrypted_data)
+	return unpad(plaintext, AES.block_size)
+\end{lstlisting}
+
+\paragraph{ }The tamper attack was done as follows:
+\begin{lstlisting}
+iv = b16encode(iv_bytes).decode('utf-8')
+ciphertext = b16encode(encrypted_data).decode('utf-8')
+ct_json = json.dumps({'iv': iv, 'ct': ciphertext})
+altered_ciphertext = attack(ct_json)
+altered_ciphertext = b16decode(json.loads(altered_ciphertext)['ct'])
+decrypt_message(altered_ciphertext, iv_bytes, signature, key, hmac_key)
+\end{lstlisting}
+\textit{Output:} Attack!
+
+\paragraph{ }Finally, the replay attack was also demonstrated:
+\begin{lstlisting}
+altered_ciphertext = b"".join([encrypted_data[32:64],
+	 encrypted_data[0:32], encrypted_data[64:]])
+decrypt_message(altered_ciphertext, iv_bytes, signature,
+	 key, hmac_key)
+\end{lstlisting}
+\textit{Output:} Attack!

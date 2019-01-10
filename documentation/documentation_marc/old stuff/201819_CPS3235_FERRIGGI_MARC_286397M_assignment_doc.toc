@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Data Storage - Computer Science Papers Dataset}{1}
+\contentsline {section}{\numberline {2}Data Extraction and Visualization - EU Stats}{2}
+\contentsline {section}{\numberline {3}Data Science Project - Dataset Analysis}{3}
+\contentsline {subsection}{\numberline {3.1}The Data Supplied}{3}
+\contentsline {paragraph}{ }{3}
+\contentsline {subsection}{\numberline {3.2}Features of Interest}{4}
+\contentsline {paragraph}{ }{4}
+\contentsline {subsection}{\numberline {3.3}Feature Extraction}{5}
+\contentsline {paragraph}{ }{5}

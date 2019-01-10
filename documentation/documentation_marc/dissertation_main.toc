@@ -1,0 +1,41 @@
+\changetocdepth {2}
+\select@language {english}
+\contentsline {chapter}{\chapternumberline {1}Block Cipher Modes and Message Authenticity}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {paragraph}{ }{1}{section*.1}
+\contentsline {paragraph}{ }{1}{section*.2}
+\contentsline {paragraph}{ }{1}{section*.3}
+\contentsline {section}{\numberline {1.2}ECB Mode Implementation}{2}{section.1.2}
+\contentsline {paragraph}{ }{2}{section*.4}
+\contentsline {paragraph}{ }{2}{section*.5}
+\contentsline {paragraph}{ }{2}{section*.6}
+\contentsline {paragraph}{ }{2}{section*.7}
+\contentsline {section}{\numberline {1.3}CBC Mode Implementation}{3}{section.1.3}
+\contentsline {paragraph}{ }{3}{section*.8}
+\contentsline {paragraph}{ }{3}{section*.9}
+\contentsline {paragraph}{ }{3}{section*.10}
+\contentsline {paragraph}{ }{4}{section*.11}
+\contentsline {paragraph}{ }{4}{section*.12}
+\contentsline {paragraph}{ }{4}{section*.13}
+\contentsline {section}{\numberline {1.4}Hardened Implementation}{5}{section.1.4}
+\contentsline {paragraph}{ }{5}{section*.14}
+\contentsline {paragraph}{ }{5}{section*.15}
+\contentsline {paragraph}{ }{5}{section*.16}
+\contentsline {paragraph}{ }{5}{section*.17}
+\contentsline {section}{\numberline {1.5}Demonstrating Failed Attacks}{6}{section.1.5}
+\contentsline {paragraph}{ }{6}{section*.18}
+\contentsline {paragraph}{ }{6}{section*.19}
+\contentsline {paragraph}{ }{6}{section*.20}
+\contentsline {paragraph}{ }{7}{section*.21}
+\contentsline {paragraph}{ }{7}{section*.22}
+\contentsline {chapter}{\chapternumberline {2}Transparent Access Control on the Blockchain}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{8}{section.2.1}
+\contentsline {paragraph}{ }{8}{section*.23}
+\contentsline {section}{\numberline {2.2}Implementing the Reference Monitor}{8}{section.2.2}
+\contentsline {paragraph}{ }{8}{section*.24}
+\contentsline {paragraph}{ }{9}{section*.25}
+\contentsline {paragraph}{ }{9}{section*.26}
+\contentsline {section}{\numberline {2.3}Attack 1}{10}{section.2.3}
+\contentsline {paragraph}{ }{10}{section*.27}
+\contentsline {section}{\numberline {2.4}Attack 2}{11}{section.2.4}
+\contentsline {chapter}{\chapternumberline {3}Setting up Certificate Authority (CA) trees and HTTPS servers.}{12}{chapter.3}

@@ -1,0 +1,123 @@
+No.     Time                          Source                Destination           Protocol Length Info
+      1 2019-01-10 16:30:38.042194317 ::1                   ::1                   TCP      88     52352 → 80 [FIN, ACK] Seq=1 Ack=1 Win=342 Len=0 TSval=1713206 TSecr=1703808
+
+Frame 1: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52352, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      2 2019-01-10 16:30:38.042271264 ::1                   ::1                   TCP      88     52350 → 80 [FIN, ACK] Seq=1 Ack=1 Win=351 Len=0 TSval=1713206 TSecr=1705052
+
+Frame 2: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52350, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      3 2019-01-10 16:30:38.042284197 ::1                   ::1                   TCP      88     80 → 52352 [FIN, ACK] Seq=1 Ack=2 Win=342 Len=0 TSval=1713206 TSecr=1713206
+
+Frame 3: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52352, Seq: 1, Ack: 2, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      4 2019-01-10 16:30:38.042290695 ::1                   ::1                   TCP      76     80 → 52350 [RST] Seq=1 Win=0 Len=0
+
+Frame 4: 76 bytes on wire (608 bits), 76 bytes captured (608 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52350, Seq: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      5 2019-01-10 16:30:38.042301836 ::1                   ::1                   TCP      88     52352 → 80 [ACK] Seq=2 Ack=2 Win=342 Len=0 TSval=1713206 TSecr=1713206
+
+Frame 5: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52352, Dst Port: 80, Seq: 2, Ack: 2, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      6 2019-01-10 16:30:38.042407674 ::1                   ::1                   TCP      96     52354 → 80 [SYN] Seq=0 Win=43690 Len=0 MSS=65476 SACK_PERM=1 TSval=1713206 TSecr=0 WS=128
+
+Frame 6: 96 bytes on wire (768 bits), 96 bytes captured (768 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52354, Dst Port: 80, Seq: 0, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      7 2019-01-10 16:30:38.042427562 ::1                   ::1                   TCP      96     80 → 52354 [SYN, ACK] Seq=0 Ack=1 Win=43690 Len=0 MSS=65476 SACK_PERM=1 TSval=1713206 TSecr=1713206 WS=128
+
+Frame 7: 96 bytes on wire (768 bits), 96 bytes captured (768 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52354, Seq: 0, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      8 2019-01-10 16:30:38.042445298 ::1                   ::1                   TCP      88     52354 → 80 [ACK] Seq=1 Ack=1 Win=43776 Len=0 TSval=1713206 TSecr=1713206
+
+Frame 8: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52354, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+      9 2019-01-10 16:30:38.042511617 ::1                   ::1                   TCP      96     52356 → 80 [SYN] Seq=0 Win=43690 Len=0 MSS=65476 SACK_PERM=1 TSval=1713206 TSecr=0 WS=128
+
+Frame 9: 96 bytes on wire (768 bits), 96 bytes captured (768 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52356, Dst Port: 80, Seq: 0, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+     10 2019-01-10 16:30:38.042523232 ::1                   ::1                   TCP      96     80 → 52356 [SYN, ACK] Seq=0 Ack=1 Win=43690 Len=0 MSS=65476 SACK_PERM=1 TSval=1713206 TSecr=1713206 WS=128
+
+Frame 10: 96 bytes on wire (768 bits), 96 bytes captured (768 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52356, Seq: 0, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+     11 2019-01-10 16:30:38.042536715 ::1                   ::1                   TCP      88     52356 → 80 [ACK] Seq=1 Ack=1 Win=43776 Len=0 TSval=1713206 TSecr=1713206
+
+Frame 11: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52356, Dst Port: 80, Seq: 1, Ack: 1, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+     12 2019-01-10 16:30:38.043869650 ::1                   ::1                   HTTP     1269   POST /page.php HTTP/1.1  (application/x-www-form-urlencoded)
+
+Frame 12: 1269 bytes on wire (10152 bits), 1269 bytes captured (10152 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52354, Dst Port: 80, Seq: 1, Ack: 1, Len: 1181
+Hypertext Transfer Protocol
+HTML Form URL Encoded: application/x-www-form-urlencoded
+
+No.     Time                          Source                Destination           Protocol Length Info
+     13 2019-01-10 16:30:38.043912802 ::1                   ::1                   TCP      88     80 → 52354 [ACK] Seq=1 Ack=1182 Win=174720 Len=0 TSval=1713207 TSecr=1713207
+
+Frame 13: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52354, Seq: 1, Ack: 1182, Len: 0
+
+No.     Time                          Source                Destination           Protocol Length Info
+     14 2019-01-10 16:30:38.045372805 ::1                   ::1                   HTTP     679    HTTP/1.1 200 OK  (text/html)
+
+Frame 14: 679 bytes on wire (5432 bits), 679 bytes captured (5432 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 80, Dst Port: 52354, Seq: 1, Ack: 1182, Len: 591
+Hypertext Transfer Protocol
+Line-based text data: text/html (17 lines)
+
+No.     Time                          Source                Destination           Protocol Length Info
+     15 2019-01-10 16:30:38.045391103 ::1                   ::1                   TCP      88     52354 → 80 [ACK] Seq=1182 Ack=592 Win=44928 Len=0 TSval=1713207 TSecr=1713207
+
+Frame 15: 88 bytes on wire (704 bits), 88 bytes captured (704 bits)
+Linux cooked capture
+Internet Protocol Version 6, Src: ::1, Dst: ::1
+Transmission Control Protocol, Src Port: 52354, Dst Port: 80, Seq: 1182, Ack: 592, Len: 0

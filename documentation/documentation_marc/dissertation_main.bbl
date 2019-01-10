@@ -1,0 +1,38 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arrighi(2003)]{Arrighi2003}
+Pablo Arrighi.
+\newblock Quantum computation explained to my mother.
+\newblock \emph{arXiv preprint quant-ph/0305045}, 2003.
+
+\bibitem[Ebejer et~al.(2012)Ebejer, Morris, and Deane]{Ebejer2012}
+Jean-Paul Ebejer, Garrett~M. Morris, and Charlotte~M. Deane.
+\newblock Freely available conformer generation methods: How good are they?
+\newblock \emph{J. Chem. Inf. Model.}, 52\penalty0 (5):\penalty0 1146--1158,
+  2012.
+
+\bibitem[Ebejer et~al.(2016)Ebejer, Charlton, and Finn]{Ebejer2016}
+Jean-Paul Ebejer, Michael~H. Charlton, and Paul~W. Finn.
+\newblock Are the physicochemical properties of antibacterial compounds really
+  different from other drugs?
+\newblock \emph{Journal of Cheminformatics}, 8\penalty0 (1), June 2016.
+
+\bibitem[Withers-Martinez et~al.(2012)Withers-Martinez, Suarez, Fulle, Kher,
+  Penzo, Ebejer, Koussis, Hackett, Jirgensons, Finn, and
+  Blackman]{WithersMartinez2012}
+Chrislaine Withers-Martinez, Catherine Suarez, Simone Fulle, Samir Kher, Maria
+  Penzo, Jean-Paul Ebejer, Kostas Koussis, Fiona Hackett, Aigars Jirgensons,
+  Paul Finn, and Michael~J. Blackman.
+\newblock {Plasmodium subtilisin-like protease 1 (SUB1): Insights into the
+  active-site structure, specificity and function of a pan-malaria drug
+  target}.
+\newblock \emph{International Journal for Parasitology}, 42\penalty0
+  (6):\penalty0 597--612, 2012.
+\newblock ISSN 0020-7519.
+
+\end{thebibliography}

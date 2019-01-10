@@ -1,0 +1,61 @@
+\documentclass[12pt]{report}
+
+%Packages
+\usepackage{setspace} %for onehalf spacing
+\usepackage{graphicx} %for includegraphics
+\usepackage{float} %for H pointer in graphics
+%\usepackage{titlesec} %to make section titles smaller
+%\usepackage{etoolbox} %remove page break in Bibliography
+%Required packages in csfyp class:
+%\usepackage[top=1.2in, left=2.7cm, bottom=1.2in, right=2.7cm]{geometry} 
+%\usepackage{calc}
+%\usepackage[bottom]{footmisc}
+\usepackage{caption}
+\captionsetup[table]{skip=1ex}
+
+%Parameters
+\onehalfspacing
+\renewcommand\thesection{\arabic{section}} %change numbering style of sections
+
+
+\begin{document}
+	\pagenumbering{roman}
+	%Title Page:
+	\begin{titlepage}
+		\centering
+		{\LARGE\bfseries CPS3235 Data Science: From Data to Knowledge\par}
+		\vspace{.5cm}
+		
+		{\Large \textbf{Study Unit Assignment} \par}
+		\vspace{.5cm}
+		
+		{\large \textbf{Marc Ferriggi (286397M)}\par}
+		\vspace{0.5cm}
+		
+		{\large \textbf{Lecturer:} Dr. Jean-Paul Ebejer\par}
+		\vfill
+		
+		\includegraphics[width=0.65\textwidth]{UoMLogo}\par
+		\vfill
+		
+		{\large\bfseries Department of Computer Science \par}
+		{\large\bfseries University of Malta \par}
+		{\large\bfseries January 2019 \par}
+	\end{titlepage}
+	
+	\tableofcontents
+	\vfill
+	\cleardoublepage
+	\pagenumbering{arabic}
+	
+	\section{Data Storage - Computer Science Papers Dataset}
+	\pagebreak
+	
+	\section{Data Extraction and Visualization - EU Stats}
+	\pagebreak
+	
+	\section{Data Science Project - Dataset Analysis}
+
+	
+	\pagebreak
+\end{document}
