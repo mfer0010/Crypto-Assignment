@@ -1,1 +1,51 @@
 \chapter{Setting up Certificate Authority (CA) trees and HTTPS servers.}
+\section{Introduction}
+\paragraph{ }In this task, the \texttt{openssl toolkit} was used to set up a Certificate Authority and HTTPS servers in order to provide client/server authentication along with message confidentiality and integrity by passing the HTTP traffic over TLS. Note that although the CA has been set up in the \texttt{/root/ca} directory, the file structure has been copied over to the \texttt{tasks/Task 3} folder in the provided \texttt{.zip} file.
+
+\section{Configuring the CA tree}
+\paragraph{ }Initially, the terminal was set to run as root by running the command \texttt{sudo -i} and entering the password when prompted. The following commands were then run to create the directory structure as well as set restricted access to the directory. \\
+\vspace{0pt}\\
+\texttt{mkdir /root/ca\\
+cd /root/ca\\
+mkdir certs crl newcerts private\\
+chmod 700 private\\
+touch index.txt\\
+echo 1000 > serial}
+
+\paragraph{ }A configuration file was then set up, copying the contents from the \textit{Appendix} of the provided tutorial. this was saved in the file \texttt{/root/ca/openssl.cnf}. This file is important as it tells \texttt{openssl} what options to use when setting up the CA as well as the policies that must be followed by the CA intermediate signatures in order to get signed by the root CA. The root key was then created using \texttt{openssl} and this was encrypted using AES in order to be kept absolutely secure. The following code was run to do this, and a password was created when prompted.\\
+\vspace{0pt}\\
+\texttt{openssl genrsa -aes256 -out private/ca.key.pem 4096\\
+chmod 400 private/ca.key.pem}
+
+\paragraph{ }A root certificate was then set up using the newly created root key. The certificate was given an arbitrarily long expiry date of 7300 days for the sake of this assignment. After running the \texttt{openssl} command, details of the root CA were entered when asked to in order to be able to distinguish this CA from other CA's.
+\begin{verbatim}
+openssl req -config openssl.cnf \
+    -key private/ca.key.pem \
+    -new -x509 -days 7300 -sha256 -extensions v3\_ca \
+    -out certs/ca.cert.pem
+chmod 444 certs/ca.cert.pem
+\end{verbatim}
+
+\paragraph{ }The intermediate CA was then set up. In real world scenarios, the intermediate CA will be used to sign certificates on behalf of the root CA, so that the root CA can be kept  offline to improve the security of the structure. Thus, if the private key of the intermediate CA is compromised, the root CA will simply revoke the intermediate one. The following commands were run similar to those of creating the root CA in order to begin the setup of the intermediate CA. The last line in the following code adds a file to keep track of certificate revocation list, although this will not be used for this task, it was set up anyway to have a complete structure.
+\begin{verbatim}
+mkdir /root/ca/intermediate
+cd /root/ca/intermediate
+mkdir certs crl csr newcerts private
+chmod 700 private
+touch index.txt
+echo 1000 > serial
+exho 1000 > /root/ca/intermediate/crlnumber
+\end{verbatim}
+
+\paragraph{ }The intermediate CA configuration file was then set up similar to the root's configuration file, with a few commands changed. this was saved to \texttt{/root/ca/intermediate/ openssl.conf}. Once again, a key was then set up and the intermediate certificate was created and encrypted using the set up key.
+
+\begin{verbatim}
+cd /root/ca
+openssl genrsa -aes256 \
+    -out intermediate/private/intermediate.key.pem 4096
+
+chmod 400 intermediate/private/intermediate.key.pem
+openssl req -config intermediate/openssl.cnf -new -sha256 \
+    -key intermediate/private/intermediate.key.pem \
+    -out intermediate/csr/intermediate.csr.pem
+\end{verbatim}

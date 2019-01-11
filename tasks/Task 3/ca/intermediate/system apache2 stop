@@ -1,0 +1,25 @@
+[0;1;31m●[0m apache2.service - LSB: Apache2 web server
+   Loaded: loaded (/etc/init.d/apache2; bad; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: [0;1;31mfailed[0m (Result: timeout) since Ħam 2019-01-10 11:08:38 CET; 1min 39s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 3971 ExecStart=/etc/init.d/apache2 start (code=killed, signal=TERM)
+    Tasks: 6
+   Memory: 6.1M
+      CPU: 153ms
+   CGroup: /system.slice/apache2.service
+           ├─1459 /bin/sh /usr/sbin/apache2ctl start
+           ├─1462 /usr/sbin/apache2 -k start
+           ├─1467 /bin/systemd-ask-password --timeout=0 Enter passphrase for SSL/TLS keys for 127.0.1.1:443 (RSA):
+           ├─3982 /bin/sh /usr/sbin/apache2ctl start
+           ├─3985 /usr/sbin/apache2 -k start
+           └─3986 /bin/systemd-ask-password --timeout=0 Enter passphrase for SSL/TLS keys for 127.0.1.1:443 (RSA):
+
+Jan 10 11:03:38 marc-Aspire-ES1-521 systemd[1]: Starting LSB: Apache2 web server...
+Jan 10 11:03:38 marc-Aspire-ES1-521 apache2[3971]:  * Starting Apache httpd web server apache2
+Jan 10 11:03:38 marc-Aspire-ES1-521 apache2[3971]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Jan 10 11:08:38 marc-Aspire-ES1-521 systemd[1]: [0;1;39mapache2.service: Start operation timed out. Terminating.[0m
+Jan 10 11:08:38 marc-Aspire-ES1-521 systemd[1]: [0;1;31mFailed to start LSB: Apache2 web server.[0m
+Jan 10 11:08:38 marc-Aspire-ES1-521 systemd[1]: [0;1;39mapache2.service: Unit entered failed state.[0m
+Jan 10 11:08:38 marc-Aspire-ES1-521 systemd[1]: [0;1;39mapache2.service: Failed with result 'timeout'.[0m
