@@ -1,4 +1,4 @@
-\chapter{Setting up Certificate Authority (CA) trees and HTTPS servers.}
+\chapter{Setting up CA trees and HTTPS servers.}
 \section{Introduction}
 \paragraph{ }In this task, the \texttt{openssl toolkit} was used to set up a Certificate Authority and HTTPS servers in order to provide client/server authentication along with message confidentiality and integrity by passing the HTTP traffic over TLS. Note that although the CA has been set up in the \texttt{/root/ca} directory, the file structure has been copied over to the \texttt{tasks/Task 3} folder in the provided \texttt{.zip} file.
 
@@ -37,7 +37,7 @@ echo 1000 > serial
 exho 1000 > /root/ca/intermediate/crlnumber
 \end{verbatim}
 
-\paragraph{ }The intermediate CA configuration file was then set up similar to the root's configuration file, with a few commands changed. this was saved to \texttt{/root/ca/intermediate/ openssl.conf}. Once again, a key was then set up and the intermediate certificate was created and encrypted using the set up key.
+\paragraph{ }The intermediate CA configuration file was then set up similar to the root's configuration file, with a few commands changed. this was saved to \texttt{/root/ca/intermediate/ openssl.conf}. Once again, a key was then set up and the intermediate certificate was created and encrypted using the set up key. Note that the intermediate certificate was set to be valid for 3650 days, which is a shorter period than the root certificate.
 
 \begin{verbatim}
 cd /root/ca
@@ -48,4 +48,60 @@ chmod 400 intermediate/private/intermediate.key.pem
 openssl req -config intermediate/openssl.cnf -new -sha256 \
     -key intermediate/private/intermediate.key.pem \
     -out intermediate/csr/intermediate.csr.pem
+    
+openssl ca -config openssl.cnf -extensions v3_intermediate_ca \
+    -days 3650 -notext -md sha256 \
+    -in intermediate/csr/intermediate.csr.pem \
+    -out intermediate/certs/intermediate.cert.pem
+chmod 444 intermediate/certs/intermediate.cert.pem
 \end{verbatim}
+
+\paragraph{ }The \texttt{index.txt} file of the root CA was then checked to ensure that it contains an entry to the intermediate CA. After this, the certificate chain file was then created, this file tells the web browser how to complete the chain of trust when verifying a certificate in order to reach the root CA.
+
+\begin{verbatim}
+cat intermediate/certs/intermediate.cert.pem \
+    certs/ca.cert.pem > intermediate/certs/ca-chain.cert.pem
+chmod 444 intermediate/certs/ca-chain.cert.pem
+\end{verbatim}
+
+\section{Signing a domain using the CA}
+\paragraph{ }In this task, the newly set up intermediate CA was used to sign a certificate for the domain \texttt{www.example.com}, thus enabling HTTPS access to the website. Firstly, a key was created for the client domain. Since this was set to expire after only 1 year, 2048 bits was used for the key instead of 4096 bits as this would be sufficiently secure and would increase the performance of TLS handshakes.
+
+\begin{verbatim}
+cd /root/ca
+openssl genrsa -aes256 \
+    -out intermediate/private/www.example.com.key.pem 2048
+chmod 400 intermediate/private/www.example.com.key.pem
+\end{verbatim}
+
+\paragraph{ }Similar to the previous tasks, the private key was then used to create the certificate which will be signed by the intermediate CA using the following code, where the details of the domain were entered when prompted.
+
+\begin{verbatim}
+openssl req -config intermediate/openssl.cnf \
+    -key intermediate/private/www.example.com.key.pem \
+    -new -sha256 -out intermediate/csr/www.example.com.csr.pem
+
+openssl ca -config intermediate/openssl.cnf \
+    -extensions server_cert -days 375 -notext -md sha256 \
+    -in interediate/csr/www.example.com.csr.pem \
+    -out intermediate/certs/www.example.com.cert.pem
+chmod 444 intermediate/certs/www.example.com.cert.pem
+\end{verbatim}
+
+\paragraph{ }After the above code was run, an entry was created in the \texttt{intermediate/index.txt} which referred to the new certificate of \texttt{www.example.com}. Once the CA tree was set up, with the domain certified, the \texttt{SSLCertificateFile} and \texttt{SSLCertificateKeyFile} entries in the Apache 2 settings file were changed to point to \texttt{/root/ca/intermediate/cert s/www.example.com.cert.pem} and \texttt{/root/ca/intermediate/private/www.example.com .key.pem} respectively. Finally, the following code was run to restart the server:
+
+\begin{verbatim}
+sudo a2enmod ssl
+sudo service apache2 restart
+\end{verbatim}
+
+\paragraph{ }In order to verify that the server is working correctly, running \texttt{service apache2 status} gave the following output:
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{apache2status}
+\end{figure}
+
+\paragraph{ }Furthermore, running \texttt{localhost} in a web browser or \texttt{https://localhost} both gave a running web page. Finally, the server's IP address was hard-coded in a DNS response cache file in order to carry out domain name resolution.
+
+\section{Traffic Analysis on HTTP and HTTPS} 

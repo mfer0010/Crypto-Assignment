@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  11 JAN 2019 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  13 JAN 2019 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1087,7 +1087,7 @@ line 68.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-<./images/umlogo_red.png, id=60, 597.432pt x 597.432pt>
+<./images/umlogo_red.png, id=68, 597.432pt x 597.432pt>
 File: ./images/umlogo_red.png Graphic file (type png)
 
 <use ./images/umlogo_red.png>
@@ -1144,7 +1144,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--87
 
  []
 
-<./images/umlogo_gray.png, id=62, 597.432pt x 597.432pt>
+<./images/umlogo_gray.png, id=70, 597.432pt x 597.432pt>
 File: ./images/umlogo_gray.png Graphic file (type png)
 
 <use ./images/umlogo_gray.png>
@@ -1333,9 +1333,31 @@ Overfull \hbox (26.19513pt too wide) in paragraph at lines 102--104
 
 [10]) (./chap3/materials_and_methods_main.tex [11] [12
 
-] [13]) [14]
+] [13] [14]
+Overfull \hbox (1.34212pt too wide) in paragraph at lines 91--92
+\T1/ppl/m/n/10.95 tries in the Apache 2 set-tings file were changed to point to
+ \T1/cmtt/m/n/10.95 /root/ca/intermediate/cert
+ []
 
-Package nag Warning: 1 complaints in total.
+
+Overfull \hbox (3.4436pt too wide) in paragraph at lines 91--92
+\T1/cmtt/m/n/10.95 s/www.example.com.cert.pem \T1/ppl/m/n/10.95 and \T1/cmtt/m/
+n/10.95 /root/ca/intermediate/private/www.example.com
+ []
+
+<./images/apache2status.jpg, id=464, 683.55376pt x 320.19624pt>
+File: ./images/apache2status.jpg Graphic file (type jpg)
+
+<use ./images/apache2status.jpg>
+Package pdftex.def Info: ./images/apache2status.jpg used on input line 102.
+(pdftex.def)             Requested size: 252.60257pt x 118.32417pt.
+
+
+Package nag Warning: figure with no \caption on input line 103.
+
+[15 <./images/apache2status.jpg>]) [16]
+
+Package nag Warning: 2 complaints in total.
 
 \tf@toc=\write6
 \openout6 = `dissertation_main.toc'.
@@ -1450,11 +1472,12 @@ chap1/introduction_main.tex
   t1cmtt.fd    2014/09/29 v2.5h Standard LaTeX font definitions
 chap2/background_and_lit_overview_main.tex
 chap3/materials_and_methods_main.tex
+./images/apache2status.jpg
  ***********
 
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: 7900F2C22DB23ECA8D091B8FE0D42F16;973.
+(rerunfilecheck)             Checksum: E604A09D8CE4FCAA4FDE479C9645B183;1104.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  )
 (\end occurred inside a group at level 1)
@@ -1462,10 +1485,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
 ### simple group (level 1) entered at line 111 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14365 strings out of 493029
- 198587 string characters out of 6136235
- 363434 words of memory out of 5000000
- 17342 multiletter control sequences out of 15000+600000
+ 14385 strings out of 493029
+ 198896 string characters out of 6136235
+ 363435 words of memory out of 5000000
+ 17350 multiletter control sequences out of 15000+600000
  77731 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,40p,758b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1482,10 +1505,10 @@ tgar/uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagko8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on dissertation_main.pdf (17 pages, 323394 bytes).
+Output written on dissertation_main.pdf (19 pages, 374218 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 521 compressed objects within 6 object streams
- 318 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 547 compressed objects within 6 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
