@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  13 JAN 2019 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  13 JAN 2019 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1000,44 +1000,52 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count183
+\float@exts=\toks28
+\float@box=\box32
+\@float@everytoks=\toks29
+\@floatcapt=\box33
+)
 (./dissertation_main.aux)
 \openout1 = `dissertation_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
-line 68.
+line 69.
 Package nag Info: Command \RaggedRight not defined, skipping amendment on input
- line 68.
+ line 69.
 \big@size=\dimen158
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count183
+\scratchcounter=\count184
 \scratchdimen=\dimen159
-\scratchbox=\box32
-\nofMPsegments=\count184
-\nofMParguments=\count185
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count186
+\scratchbox=\box34
+\nofMPsegments=\count185
+\nofMParguments=\count186
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count187
 \MPscratchDim=\dimen160
-\MPnumerator=\count187
-\makeMPintoPDFobject=\count188
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count188
+\makeMPintoPDFobject=\count189
+\everyMPtoPDFconversion=\toks31
 )
-\AtBeginShipoutBox=\box33
+\AtBeginShipoutBox=\box35
  (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1052,7 +1060,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 68.
+Package hyperref Info: Link coloring OFF on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1060,29 +1068,29 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count189
+\c@section@level=\count190
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 68.
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \nameref on input line 69.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
 (./dissertation_main.out) (./dissertation_main.out)
 \@outlinefile=\write5
 \openout5 = `dissertation_main.out'.
 
-\c@lstlisting=\count190
+\c@lstlisting=\count191
 Package nag Info: Command \caption@xlabel not defined, skipping amendment on in
-put line 68.
+put line 69.
 Package nag Info: Command \captionabove not defined, skipping amendment on inpu
-t line 68.
+t line 69.
 Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
-t line 68.
+t line 69.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
-line 68.
+line 69.
 Package nag Info: Command \topcaption not defined, skipping amendment on input 
-line 68.
+line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1091,56 +1099,56 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: ./images/umlogo_red.png Graphic file (type png)
 
 <use ./images/umlogo_red.png>
-Package pdftex.def Info: ./images/umlogo_red.png used on input line 87.
+Package pdftex.def Info: ./images/umlogo_red.png used on input line 88.
 (pdftex.def)             Requested size: 91.04881pt x 91.04214pt.
 
-Overfull \hbox (6.8501pt too wide) in paragraph at lines 87--87
+Overfull \hbox (6.8501pt too wide) in paragraph at lines 88--88
  [][]
  []
 
-LaTeX Font Info:    Try loading font information for T1+pag on input line 87.
+LaTeX Font Info:    Try loading font information for T1+pag on input line 88.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pag.fd
 File: t1pag.fd 2001/06/04 font definitions for T1/pag.
 )
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <24.88> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <12> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 88.
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 
  []
 
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <17.28> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/bx/sc' in size <17.28> not available
-(Font)              Font shape `T1/pag/b/sc' tried instead on input line 87.
+(Font)              Font shape `T1/pag/b/sc' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/b/sc' in size <17.28> not available
-(Font)              Font shape `T1/pag/db/sc' tried instead on input line 87.
+(Font)              Font shape `T1/pag/db/sc' tried instead on input line 88.
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 
  []
 
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 87.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 88.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <10> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 88.
 
-Overfull \hbox (5.76138pt too wide) in paragraph at lines 87--87
+Overfull \hbox (5.76138pt too wide) in paragraph at lines 88--88
 [][] |  [][][] |  []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 
  []
 
@@ -1148,7 +1156,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--87
 File: ./images/umlogo_gray.png Graphic file (type png)
 
 <use ./images/umlogo_gray.png>
-Package pdftex.def Info: ./images/umlogo_gray.png used on input line 87.
+Package pdftex.def Info: ./images/umlogo_gray.png used on input line 88.
 (pdftex.def)             Requested size: 418.25368pt x 418.26337pt.
  [1
 
@@ -1355,17 +1363,51 @@ Package pdftex.def Info: ./images/apache2status.jpg used on input line 102.
 
 Package nag Warning: figure with no \caption on input line 103.
 
-[15 <./images/apache2status.jpg>]) [16]
+[15 <./images/apache2status.jpg>]
+<./images/login.jpg, id=472, 667.49374pt x 259.97125pt>
+File: ./images/login.jpg Graphic file (type jpg)
 
-Package nag Warning: 2 complaints in total.
+<use ./images/login.jpg>
+Package pdftex.def Info: ./images/login.jpg used on input line 123.
+(pdftex.def)             Requested size: 252.60257pt x 98.38152pt.
+
+
+Package nag Warning: figure with no \caption on input line 124.
+
+<./images/wireshark_http.jpg, id=473, 442.65375pt x 123.46124pt>
+File: ./images/wireshark_http.jpg Graphic file (type jpg)
+
+<use ./images/wireshark_http.jpg>
+Package pdftex.def Info: ./images/wireshark_http.jpg used on input line 130.
+(pdftex.def)             Requested size: 252.60257pt x 70.45464pt.
+ [16 <./images/login.jpg>]
+<./images/wireshark_https_1.jpg, id=483, 1341.01pt x 26.0975pt>
+File: ./images/wireshark_https_1.jpg Graphic file (type jpg)
+
+<use ./images/wireshark_https_1.jpg>
+Package pdftex.def Info: ./images/wireshark_https_1.jpg used on input line 137.
+
+(pdftex.def)             Requested size: 421.0pt x 8.19287pt.
+
+<./images/wireshark_https_2.jpg, id=484, 561.09625pt x 162.6075pt>
+File: ./images/wireshark_https_2.jpg Graphic file (type jpg)
+
+<use ./images/wireshark_https_2.jpg>
+Package pdftex.def Info: ./images/wireshark_https_2.jpg used on input line 142.
+
+(pdftex.def)             Requested size: 252.60257pt x 73.20494pt.
+) [17 <./images/wireshark_http.jpg> <./images/wireshark_https_1.jpg> <./images/
+wireshark_https_2.jpg>]
+
+Package nag Warning: 3 complaints in total.
 
 \tf@toc=\write6
 \openout6 = `dissertation_main.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
 (./dissertation_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
 
 
  *File List*
@@ -1450,6 +1492,7 @@ blindtext.sty    2012/01/06 V2.0 blindtext-Package
 listings.sty    2015/06/04 1.6 (Carsten Heinz)
  lstmisc.sty    2015/06/04 1.6 (Carsten Heinz)
 listings.cfg    2015/06/04 1.6 listings configuration
+   float.sty    2001/11/08 v1.3d Float enhancements (AL)
 supp-pdf.mkii
 epstopdf-base.sty    2010/02/09 v2.5 Base part for package epstopdf
   grfext.sty    2010/08/19 v1.1 Manage graphics extensions (HO)
@@ -1473,22 +1516,26 @@ chap1/introduction_main.tex
 chap2/background_and_lit_overview_main.tex
 chap3/materials_and_methods_main.tex
 ./images/apache2status.jpg
+./images/login.jpg
+./images/wireshark_http.jpg
+./images/wireshark_https_1.jpg
+./images/wireshark_https_2.jpg
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
 (rerunfilecheck)             Checksum: E604A09D8CE4FCAA4FDE479C9645B183;1104.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 111 ({)
+### simple group (level 1) entered at line 112 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14385 strings out of 493029
- 198896 string characters out of 6136235
- 363435 words of memory out of 5000000
- 17350 multiletter control sequences out of 15000+600000
+ 14467 strings out of 493029
+ 200291 string characters out of 6136235
+ 364853 words of memory out of 5000000
+ 17419 multiletter control sequences out of 15000+600000
  77731 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,40p,758b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1505,10 +1552,10 @@ tgar/uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagko8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on dissertation_main.pdf (19 pages, 374218 bytes).
+Output written on dissertation_main.pdf (20 pages, 458464 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 547 compressed objects within 6 object streams
- 328 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 333 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

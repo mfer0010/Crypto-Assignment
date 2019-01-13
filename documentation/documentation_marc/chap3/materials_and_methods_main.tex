@@ -105,3 +105,39 @@ sudo service apache2 restart
 \paragraph{ }Furthermore, running \texttt{localhost} in a web browser or \texttt{https://localhost} both gave a running web page. Finally, the server's IP address was hard-coded in a DNS response cache file in order to carry out domain name resolution.
 
 \section{Traffic Analysis on HTTP and HTTPS} 
+\paragraph{ }In order to be able to analyse the traffic over the Apache server, a login page was created using PHP and mySQL. Initially, mySQL was installed on the machine and run using the command \texttt{mysql -u root -p}, a schema called \texttt{crypto} was created and a `users' table was created in this schema using the following code:
+
+\begin{verbatim}
+CREATE TABLE `users` (
+    `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `username` varchar(80) NOT NULL,
+    `name` varchar(80) NOT NULL,
+    `password` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+\end{verbatim}
+
+\paragraph{ }The table was then populated with an entry and a login page was then created using PHP and saved in \texttt{/var/www/html} in order to be run by the Apache server. These files can be found saved in \texttt{/tasks/Task 3/html} in the provided \texttt{.zip} folder. The resultant login page running on \texttt{localhost} can be seen below:
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{login}
+\end{figure}
+
+\paragraph{ }After all of this was set up, \texttt{wireshark} was installed to perform traffic analysis. This was first done when running \texttt{localhost} on HTTP and the following image shows the exposed user name and password that was sent over the network with no encryption.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{wireshark_http}
+\end{figure}
+
+\paragraph{ }The next image shows the traffic analysis done when running \texttt{localhost} in HTTPS. It can be noted that no data was exposed since its now encrypted.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{wireshark_https_1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{wireshark_https_2}
+\end{figure}
