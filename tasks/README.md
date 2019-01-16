@@ -1,4 +1,4 @@
-#Running the Code
+# Running the Code
 
 In order to run the code with all the packages installed with anaconda, use the conda environment crypto_assignment_env.yml.
 
