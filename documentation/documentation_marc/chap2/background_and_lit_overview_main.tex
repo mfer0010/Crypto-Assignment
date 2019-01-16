@@ -95,11 +95,13 @@ for i in range(t):
 
 	#Rene
 	e = random.randint(0,1)
-	#e is sent to Alice on open channel, Oscar can intercept this
+	#e is sent to Alice on open channel, 
+	#Oscar can intercept this
 	
 	#Alice
 	y = (r*(s**e)) % n
-	#y is sent to Rene on an open channel, Oscar can intercept this
+	#y is sent to Rene on an open channel, 
+	#Oscar can intercept this
 	
 	#Oscar's Attack:
 	if e==0 and gotR == 0:
@@ -118,4 +120,42 @@ for i in range(t):
 \textit{Output:} True
 
 \section{Attack 2}
-\paragraph{ }The original implementation was then weakened in a way that Rene would always challenge with $e=1$. In this case, its possible to spoof Alice without knowing \textit{s}
+\paragraph{ }The original implementation was then weakened in a way that Rene would always challenge with $e=1$. In this case, its possible to spoof Alice without knowing \textit{s}. For this attack it also assumed that Oscar has access to \textit{r}, or has somehow guessed it. Oscar then uses a man in the middle attack to intercept \textit{x} and send over $x/v$ $mod$ $n$ (which is equivalent to $r^2v^{-1}$ $mod$ $n$) to Rene. Oscar will continue the attack and intercept $y$ and simply send over $r$ instead of $y$ to Rene. When Rene checks to ensure $y^2 \equiv x*v^e$ $mod$ $n$, this would return true, thus granting access to Oscar. The modified code for the attack can be seen below.
+
+\begin{lstlisting}[language=Python]
+t = 100
+for i in range(t):
+	#Interactive Protocol
+	#Alice
+	#pick random r
+	r = random.randint(1,n+1)
+	x = (r**2)%n #compute x
+	#x is now sent to Rene on an open channel
+
+	#####################################
+	#Oscar intercepts x with a man in the
+	#middle attack, changes it and sends
+	#his own x to Rene
+	Oscar_x = (x*gmpy2.invert(v,n))%n
+	#####################################
+
+
+	#Rene receive's Oscar's x and sends 1
+	e = 1
+	#e is sent to Alice, Oscar can intercept
+
+	#Alice receives e so she's clueless to the attack
+	y = (r*(s**e)) % n
+	#y is sent to Rene on the open channel
+
+	#####################################
+	#Oscar intercepts y
+	Oscar_y = r % n 
+	#####################################
+
+	#Rene will check with Oscar's values and thus
+	#let him in:
+	if (Oscar_y**2 % n != (Oscar_x*(v**e))%n):
+		print('Attack!')
+		break
+\end{lstlisting}

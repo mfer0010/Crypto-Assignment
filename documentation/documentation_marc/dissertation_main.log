@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  13 JAN 2019 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.1.8)  16 JAN 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1325,23 +1325,10 @@ Overfull \hbox (26.19513pt too wide) in paragraph at lines 240--241
 
 ) (./chap2/background_and_lit_overview_main.tex [7] [8
 
-] [9]
-Overfull \hbox (13.59808pt too wide) in paragraph at lines 98--100
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
- []
+] [9] [10] [11])
+(./chap3/materials_and_methods_main.tex [12] [13
 
-
-Overfull \hbox (26.19513pt too wide) in paragraph at lines 102--104
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][] 
- []
-
-[10]) (./chap3/materials_and_methods_main.tex [11] [12
-
-] [13] [14]
+] [14] [15]
 Overfull \hbox (1.34212pt too wide) in paragraph at lines 91--92
 \T1/ppl/m/n/10.95 tries in the Apache 2 set-tings file were changed to point to
  \T1/cmtt/m/n/10.95 /root/ca/intermediate/cert
@@ -1353,7 +1340,7 @@ Overfull \hbox (3.4436pt too wide) in paragraph at lines 91--92
 n/10.95 /root/ca/intermediate/private/www.example.com
  []
 
-<./images/apache2status.jpg, id=464, 683.55376pt x 320.19624pt>
+<./images/apache2status.jpg, id=506, 683.55376pt x 320.19624pt>
 File: ./images/apache2status.jpg Graphic file (type jpg)
 
 <use ./images/apache2status.jpg>
@@ -1363,8 +1350,8 @@ Package pdftex.def Info: ./images/apache2status.jpg used on input line 102.
 
 Package nag Warning: figure with no \caption on input line 103.
 
-[15 <./images/apache2status.jpg>]
-<./images/login.jpg, id=472, 667.49374pt x 259.97125pt>
+[16 <./images/apache2status.jpg>]
+<./images/login.jpg, id=515, 667.49374pt x 259.97125pt>
 File: ./images/login.jpg Graphic file (type jpg)
 
 <use ./images/login.jpg>
@@ -1374,14 +1361,14 @@ Package pdftex.def Info: ./images/login.jpg used on input line 123.
 
 Package nag Warning: figure with no \caption on input line 124.
 
-<./images/wireshark_http.jpg, id=473, 442.65375pt x 123.46124pt>
+<./images/wireshark_http.jpg, id=516, 442.65375pt x 123.46124pt>
 File: ./images/wireshark_http.jpg Graphic file (type jpg)
 
 <use ./images/wireshark_http.jpg>
 Package pdftex.def Info: ./images/wireshark_http.jpg used on input line 130.
 (pdftex.def)             Requested size: 252.60257pt x 70.45464pt.
- [16 <./images/login.jpg>]
-<./images/wireshark_https_1.jpg, id=483, 1341.01pt x 26.0975pt>
+ [17 <./images/login.jpg>]
+<./images/wireshark_https_1.jpg, id=525, 1341.01pt x 26.0975pt>
 File: ./images/wireshark_https_1.jpg Graphic file (type jpg)
 
 <use ./images/wireshark_https_1.jpg>
@@ -1389,14 +1376,14 @@ Package pdftex.def Info: ./images/wireshark_https_1.jpg used on input line 137.
 
 (pdftex.def)             Requested size: 421.0pt x 8.19287pt.
 
-<./images/wireshark_https_2.jpg, id=484, 561.09625pt x 162.6075pt>
+<./images/wireshark_https_2.jpg, id=526, 561.09625pt x 162.6075pt>
 File: ./images/wireshark_https_2.jpg Graphic file (type jpg)
 
 <use ./images/wireshark_https_2.jpg>
 Package pdftex.def Info: ./images/wireshark_https_2.jpg used on input line 142.
 
 (pdftex.def)             Requested size: 252.60257pt x 73.20494pt.
-) [17 <./images/wireshark_http.jpg> <./images/wireshark_https_1.jpg> <./images/
+) [18 <./images/wireshark_http.jpg> <./images/wireshark_https_1.jpg> <./images/
 wireshark_https_2.jpg>]
 
 Package nag Warning: 3 complaints in total.
@@ -1532,13 +1519,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
 ### simple group (level 1) entered at line 112 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14467 strings out of 493029
- 200291 string characters out of 6136235
+ 14514 strings out of 493029
+ 200987 string characters out of 6136235
  364853 words of memory out of 5000000
- 17419 multiletter control sequences out of 15000+600000
+ 17427 multiletter control sequences out of 15000+600000
  77731 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,40p,758b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,40p,787b,1923s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/lato/lato-02.enc
 }{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lato/lato-01.enc}{/usr/share/te
 xmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fon
@@ -1552,10 +1539,10 @@ tgar/uagk8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/avantgar/uagko8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on dissertation_main.pdf (20 pages, 458464 bytes).
+Output written on dissertation_main.pdf (21 pages, 462855 bytes).
 PDF statistics:
- 603 PDF objects out of 1000 (max. 8388607)
- 555 compressed objects within 6 object streams
- 333 named destinations out of 1000 (max. 500000)
+ 653 PDF objects out of 1000 (max. 8388607)
+ 603 compressed objects within 7 object streams
+ 372 named destinations out of 1000 (max. 500000)
  164 words of extra memory for PDF output out of 10000 (max. 10000000)
 
